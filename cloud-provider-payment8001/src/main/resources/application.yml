@@ -18,10 +18,10 @@ eureka:
     #true表示向注册中心注册自己
     register-with-eureka: true
     #true表示从注册中心抓取已有的注册信息，默认为true。单节点无所谓，机器必须设置为true才能配合ribbon使用负载均衡
-    fetchRegistry: true
+    fetch-registry: true
     service-url:
       #设置与eureka server交互的地址，查询服务和注册服务都需要依赖这个地址
-      defaultzone: http://localhost:7001/eureka
+      defaultZone: http://localhost:7001/eureka
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
