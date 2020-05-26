@@ -9,6 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>cloud-provider-payment8001</module>
+        <module>cloud-consumer-order80</module>
+        <module>cloud-api-commons</module>
     </modules>
     <packaging>pom</packaging>
     <!--    统一管理jar包版本-->
@@ -26,6 +28,12 @@
     <!--    子模块继承之后，提供作用：锁定版本+子modlue 不用写groupId和version-->
     <dependencyManagement>
         <dependencies>
+            <!--引入自己定义的api通用包，可以使用payment支付entity-->
+            <dependency>
+                <groupId>com.gaoyizhe.springcloud</groupId>
+                <artifactId>cloud-api-commons</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
@@ -90,19 +98,19 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-<build>
-    <finalName>cloud2020</finalName>
-    <plugins>
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <configuration>
-                <fork>true</fork>
-                <addResources>true</addResources>
-            </configuration>
+    <build>
+        <finalName>cloud2020</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
 
-        </plugin>
-    </plugins>
-</build>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
