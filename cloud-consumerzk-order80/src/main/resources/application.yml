@@ -1,0 +1,10 @@
+server:
+  port: 80
+
+#服务相关信息
+spring:
+  application:
+    name: cloud-order-service                   #模块名称
+  cloud:
+    zookeeper:
+      connect-string: 212.64.34.108:2181
